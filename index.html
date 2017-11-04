@@ -11,35 +11,38 @@
 			header
 		-->
   <header>
-      <p>техномарт</p>
-      <p><input type="search" placeholder="Поиск"></p>
-      <div>Закладки</div>
-      <div>Корзина</div>
-       <a class="button" href="">Оформить заказ</a>
-      <div class="center-header">
-        <p>Интернет магазин строительных материалов и инстументов для ремонта
-        </p>
-        <p>
-          +7 (812)555-05-55 г. Санкт-Петербург. ул. Б. Конюшенная д. 19/8
-        </p>
-        <ul>
-          <li class="login">
-            <a href="">Вход</a></li>
-          <li class="login">
-            <a href="">Регистация</a></li>
-        </ul>
+    <div class="header-top">
+      <div class="logo"> Техномарт</div>
+      <div class="search"><input type="search" placeholder="Поиск"></div>
+      <a class="marker" href="#">Закладки</a>
+      <a class="bascket" href="#">Корзина</a>
+      <a class="checkout" href="">Оформить заказ</a>
+    </div>
+
+    <div class="header-center">
+      <p>Интернет магазин строительных материалов и инстументов для ремонта
+      </p>
+      <div class="contacts">
+        +7 (812)555-05-55 г. Санкт-Петербург. ул. Б. Конюшенная д. 19/8
       </div>
-      <nav class="bottom-heder">
-        <ul>
-          <li><a href="">Главная</a></li>
-          <li><a href="">Компания</a></li>
-          <li><a href="">Каталог</a></li>
-          <li><a href="">Новости</a></li>
-          <li><a href="">Спецпредложения</a></li>
-          <li><a href="">Доставка</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li class="login">
+          <a href="">Вход</a></li>
+        <li class="login">
+          <a href="">Регистация</a></li>
+      </ul>
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="">Главная</a></li>
+        <li><a href="">Компания</a></li>
+        <li><a href="">Каталог</a></li>
+        <li><a href="">Новости</a></li>
+        <li><a href="">Спецпредложения</a></li>
+        <li><a href="">Доставка</a></li>
+        <li><a href="">Контакты</a></li>
+      </ul>
+    </nav>
   </header>
   <!--
 			main
@@ -47,25 +50,34 @@
   <main>
     <section class="top-main">
       <div class="top-main">
-
-        <div>Перфораторы
-          <a class="button" href="#">открыть католог</a></div>
-        <div>
+        <div class="sliders">
+          <div class="slide">
+            <span class="slide--title">Перфораторы</span>
+            <span>Настроящие мужские игрушки</span>
+            <a class="button" href="#">Открыть католог</a>
+          </div>
+          <div class="slide">
+            <span class="slide--title">Дрели</span>
+            <span>Соседям на рабость</span>
+            <a class="button" href="#">Открыть католог</a>
+          </div>
+        </div>
+        <div class="category">
           <ul>
             <li>Материалы
-              <a class="button" href="#">На любой вкус</a>
+              <a class="button-category" href="#">На любой вкус</a>
             </li>
             <li>Инструмент
-              <a class="button" href="#">На все случаи</a>
+              <a class="button-category" href="#">На все случаи</a>
             </li>
             <li>Техника
-              <a class="button" href="#">Для стройки</a>
+              <a class="button-category" href="#">Для стройки</a>
             </li>
             <li>Скидки 50%
-              <a class="button" href="#">На 350 товаров</a>
+              <a class="button-category" href="#">На 350 товаров</a>
             </li>
             <li>Доставка
-              <a class="button" href="#">Бесплатно</a>
+              <a class="button-category" href="#">Бесплатно</a>
             </li>
           </ul>
         </div>
@@ -179,19 +191,33 @@
       </ul>
     </section>
     <!--
-		Сурвисы
+		Сервисы
 		-->
     <section class="servise">
       <h2>Сервисы</h2>
       <p class="">Хороший интернет-магазин отличается от плохого не только ценами!мы стараемся изо всех сил, чтобы сделать покупки приятными.</p>
-      <ul>
-        <li>
-          <a href="#">Доставка</a></li>
-        <li>
-          <a href="#">Гарантия</a></li>
-        <li>
-          <a href="#">Кредит</a></li>
-      </ul>
+      <!--
+		Доставка Гарантия Кредит
+		-->
+      <div class="servise--help">
+        <input type="radio" id="delivery" name="service" checked>
+        <input type="radio" id="guaranty" name="service">
+        <input type="radio" id="Credit" name="service">
+      </div>
+      <div class="sevise--toggle">
+        <label for="delivery">Доставка</label>
+        <label for="guaranty">Гарантия</label>
+        <label for="Credit">Кредит</label>
+      </div>
+      <div class="servise-help-right">
+        <div class="servise-delivery">
+          <span>Доставка</span>
+          <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!<br> Ведь мы неплохо заработаем, поднимая его на ваш на этаж!</p>
+        </div>
+        <div class="servise-help-guaranty">Гарантия</div>
+        <div class="servise-help-Credit">Кредит</div>
+      </div>
+
     </section>
     <section class="company">
       <h2>Компания "ТЕХНОМАРТ"</h2>
@@ -254,4 +280,5 @@
     </div>
   </footer>
 </body>
+
 </html>
