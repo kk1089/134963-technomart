@@ -1,0 +1,379 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum","Arial",sans-serif;
+  min-width: 940px;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  
+}
+a {
+  text-decoration: none;
+}
+/* Начало header */
+header { 
+  display: flex;
+  flex-direction: column;
+  background: #f3f7f8;
+}
+.header-top { 
+  background: #293449;
+}
+.container {
+  width: 940px;
+  margin: auto;
+  padding: 0 10px;
+}
+.header-top-wrapper {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+/* Логотип */
+.logo {
+  min-width:165px;
+  margin: 0;
+  padding: 11px 0 7px 55px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  box-shadow: 0 5px 0 0 #b52933;
+  text-transform: uppercase;
+  background: #ee3643;
+}
+h1 {
+  margin: 0;
+}
+.search  {
+  min-width: 260px;
+ background: #293449;
+ padding: 12px 45px;
+ color: #fff;
+ cursor: pointer;
+  border: none;
+}
+.search:hover {
+  background: rgba(0,0,0,.2);
+  border: none;
+}
+.bookmarks {
+  min-width: 105px;
+  font-size: 17px;
+  line-height: 18px;
+  padding: 12px 0 12px 45px;
+}
+.basket {
+ min-width: 126px;
+  font-size: 17px;
+  line-height: 18px;
+  padding: 12px 0;
+  padding-left: 20px;
+}
+.checkout {
+ min-width: 126px;
+  font-size: 17px;
+  line-height: 18px;
+  padding: 12px 0;
+  padding-left: 20px;
+  background: #63a63e;
+}
+
+.header-bottom {  
+
+}
+.header-bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 160px;
+}
+.tittle {
+  flex-basis: 300px;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+  font-style: italic;
+}
+.tittle p  {
+  padding: 0;
+  margin-left: 53px;
+}
+
+
+.contacts {
+  flex-basis: 300px;
+}
+.contacts a {
+  color: #ee3643;
+  font-size: 21px;
+  line-height: 18px;
+  border: 3px solid #ffffff;
+} 
+.contacts p {
+  color:#32425c;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.user-block {
+  flex-basis: 300px;
+}
+.user-block a {
+  font-size: 21px;
+  line-height: 18px;
+  color: black;
+  background: white;
+}
+/* Конец header*/
+.header-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: stretch;
+  margin: auto;
+  list-style: none;
+  padding: 0 5px;
+}
+.header-nav li {
+  display: flex;
+  height: auto;
+  font-size: 17px;
+}
+.header-nav a {
+  padding: 20px 30px;
+  font-size: 17px;
+  line-height: 17px;
+}
+.header-nav {
+  margin-bottom: 60px;
+  line-height: 17px;
+  background: #293449;
+}
+.header-top a,
+.header-nav a {
+  color: #ffffff;
+}
+.header-top a:hover,
+.header-top a:focus, 
+.header-nav a:hover,
+.header-nav a:focus {
+  background: rgba(0,0,0,.2);
+}
+/* Начало main */
+main {
+  display: flex;
+  flex-direction: column;
+}
+/*      Слайды    =/ */
+.offers {
+  display: flex;
+  flex-direction: row;
+}
+.sliders {
+ order: 1;
+}
+.sliders h2 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.sliders p {
+  font-family: 'PT Sans';
+  font-size: 18px;
+  font-weight: 400px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.popular-button {
+    width: 250px;
+    font-size: 14px; */
+    line-height: 18px;
+    color: #ffffff; 
+    background: #ee3643;
+    border-radius: 3px;
+    text-transform: uppercase;
+    padding: 14px 0;
+    text-align: center;
+}
+.slide1 {
+  background-image: url(/img/slider_1.jpg );
+  width: 620px;
+  height: 266px;
+}
+/*      Воторй слайд    =/*/
+.slide2 {
+  background-image: url(/img/slider_2.jpg);
+  width: 620px;
+  height: 266px;
+}
+
+/*   желтый прямоуголтники которые я не понимаю  */
+.categories ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  flex-wrap: ;
+}
+.category {
+  list-style: none;
+}
+.category {
+  width: 300px;
+  height: 123px;
+  font-size: 24px;
+  margin-right: 20px;
+  color:#ffffff;
+  background-color: #f6b22d;
+}
+/*  Не получается с желты ми блоками попробую  сделать карточку с дрелью */
+ul {
+  text-decoration: none;
+   list-style-type: none;
+}
+.popular-product-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
+.popular-product-item:hover {
+  box-shadow: 0 0 10px #aeb2ba;
+}
+.actions {
+    position:absolute;
+    display:none;
+}
+.popular-product-item:hover .actions {
+  display:block;
+}
+.button-category {
+  font-size: 14px;
+  width: 138px;
+  color: #ffffff;
+  padding: 10px 0px;
+  background: rgba(0,0,0,.1);
+}
+.popular {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  background-color: #f9f5f0;
+  height: 89px;
+}
+.popular h2 {
+  font-size: 30px;
+  line-height: 30px;
+  color: #32425c;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+.popular a {
+  background: #ee3643;
+  color:#ffffff;
+  font-size: 14px;
+  line-height: 18px;
+}
+.popular-product-item {
+  position:relative;  
+  width: 220px;
+  height: 318px;
+  border: 1px solid #eaeaea;
+}
+.popular-product-item h3 {
+  font-family: PT sans;
+  font-size: 18px;
+  line-height: 20px;
+}
+.oldprice {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #a9a9a9;
+}
+.newprice {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 18px;
+  background: #ee3643;
+  color: #ffffff;
+}
+.popular-manufacturer {
+   
+}
+.popular-manufacturer-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content:  space-around;
+  padding: 0;
+}
+.popular-manufacturer-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 145px;
+  border: 1px solid #eaeaea;
+  margin-top: 20px;
+}
+/* Не щабудь переделать чтоб красиво было а ене это безобразие */
+.popular-manufacturer-item a {
+  padding: 50px;
+}
+.popular-manufacturer-item:hover {
+  box-shadow: 0 10px 25px rgba(41,52,73,.5);
+}
+/* Наконец-то я добрался до сервисов  */
+.service-background {
+  background: #f3f7f8;
+}
+.service h2 {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 24px;
+  color:#000000;
+  text-transform:uppercase;
+}
+.service p {
+  font-size:14px;
+  
+}
+.service-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-controls label {
+  font-size: 21px;
+  line-height: 30px;
+  max-width: 220px;
+  background: #32425c;
+  color:#ffffff;
+  padding: 15px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+.service-controls label:hover {
+  background: #293449;
+}
+.service-help-right span {
+  font-family: "Cuprum","Arial",sans-serif;
+  font-size: 36px;
+  line-height: 24px;
+  color:#32425c;
+  text-transform: uppercase;
+}
+.service-help-right p {
+  font-size:  14px;
+}

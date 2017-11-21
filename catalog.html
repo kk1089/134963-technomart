@@ -4,26 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
   <!--
 			header
 		-->
   <header>
-    <div class="conteiner">
       <div class="header-top">
-        <div class="logo">
-          <h1>Техномарт</h1>
+       <div class="container">
+        <div class="header-top-wrapper">
+          <a class="logo btn" href="index.html">Техномарт</a>
+          <input class="search" type="search" placeholder="Поиск">
+          <a class="bookmarks btn" href="#">Закладки: 0</a>
+          <a class="basket btn" href="#">Корзина: 10</a>
+          <a class="checkout btn" href="">Оформить заказ</a>
         </div>
-        <div class="search"><input type="search" placeholder="Поиск"></div>
-        <a class="bookmarks" href="#">Закладки</a>
-        <a class="basket" href="#">Корзина</a>
-        <a class="checkout" href="">Оформить заказ</a>
       </div>
+    </div>
       <div class="header-bottom">
+       <div class="container">
+       <div class="tittle">
         <p>Интернет магазин строительных материалов и инструментов для ремонта
         </p>
+         </div>
         <div class="contacts">
           <div class="tel">
             <a href="tel:+78125550555">+7 (812)555-05-55 </a>
@@ -32,20 +40,18 @@
         </div>
         <div class="user-block">
           <a href="">Равшан Джамшутович</a>
-        </div>
-        <div class="information">
-          <a  class="my-orders"href="">Мои заказы</a>
-          <a  class ="cabinet "href="">Личный кабинет</a>
+          <a  class="my-orders" href="">Мои заказы</a>
+          <a  class="cabinet" href="">Личный кабинет</a>
         </div>
         <nav class="header-nav">
           <ul>
-            <li><a href="">Главная</a></li>
-            <li><a href="">Компания</a></li>
-            <li><a href="">Каталог</a></li>
-            <li><a href="">Новости</a></li>
-            <li><a href="">Спецпредложения</a></li>
-            <li><a href="">Доставка</a></li>
-            <li><a href="">Контакты</a></li>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Компания</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Спецпредложения</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
       </div>
@@ -57,7 +63,7 @@
    
    -->
   <main>
-    <div class="conteiner">
+    <div class="container">
       <ul class="breadcrumbs">
         <li><a href="index">Главная</a></li>
         <li><a href="catalog">Каталог</a></li>
@@ -65,17 +71,17 @@
         <li class="breadcrumbs-current"><a href="perforator">Пертфоратор</a></li>
       </ul>
       <div class="caption">
-        <h1>Пертфораторы</h1>
+        <h1>Перфораторы</h1>
       </div>
       <section class="filters">
         <h2>Фильтр</h2>
         <!-- Здесь будет форма -->
-        <form class="filter" metod="get" action="https://echo.htmlacademy.ru">
+        <form class="filter" method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
-            <legend>цена</legend>
+            <legend>Цена</legend>
             </fieldset>
           <fieldset>
-            <legend>производители</legend>
+            <legend>Производители</legend>
           <ul>
             <li class="filter-option">
               <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="bosch" id="filter-bosch" checked>
@@ -100,7 +106,7 @@
           </ul>
           </fieldset>
           <fieldset>
-            <legend>питание</legend>
+            <legend>Питание</legend>
           <ul>
             <li class="filter-option">
               <input class="visually-hidden filter-input filter-input-radio" type="radio" name="supply" value="baterry" checked id="filter-baterry">
@@ -257,7 +263,7 @@
   
   -->
   <footer class="footer">
-    <div class="conteiner">
+    <div class="container">
       <div class="top-footer">
         <h1>Техномарт</h1>
         <ul class="top-footer-navigation">
