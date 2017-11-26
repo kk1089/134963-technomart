@@ -34,6 +34,7 @@ header {
 /* Логотип */
 .logo {
   min-width:165px;
+  height: 24px;
   margin: 0;
   padding: 11px 0 7px 55px;
   font-size: 24px;
@@ -93,7 +94,6 @@ h1 {
   min-height: 160px;
 }
 .tittle {
-  flex-basis: 300px;
   font-size: 16px;
   line-height: 23px;
   color: #ee3643;
@@ -106,7 +106,9 @@ h1 {
 
 
 .contacts {
-  flex-basis: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .contacts a {
   color: #ee3643;
@@ -121,13 +123,28 @@ h1 {
   font-weight: 400;
 }
 .user-block {
-  flex-basis: 300px;
+    display: flex;
+    flex-direction: row;
 }
 .user-block a {
-  font-size: 21px;
-  line-height: 18px;
-  color: black;
-  background: white;
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 21px;
+    line-height: 18px;
+    color: black;
+    background: white;
+}
+.regisration a {
+    text-decoration: underline;
+    color: #32425c;
+    background: none;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    font-family: "Cuprum","Arial",sans-serif;
+    background: #f2f6f8;
+    color: #32425c;
 }
 /* Конец header*/
 .header-nav ul {
@@ -150,9 +167,11 @@ h1 {
   line-height: 17px;
 }
 .header-nav {
+  width: -webkit-fill-available;
   margin-bottom: 60px;
   line-height: 17px;
-  background: #293449;
+  background: #32425c;
+  border-bottom: 5px solid #293449;
 }
 .header-top a,
 .header-nav a {
@@ -235,7 +254,7 @@ main {
 }
 /*  Не получается с желты ми блоками попробую  сделать карточку с дрелью */
 ul {
-  text-decoration: none;
+   text-decoration: none;
    list-style-type: none;
 }
 .popular-product-list {
@@ -249,7 +268,38 @@ ul {
 }
 .actions {
     position:absolute;
+    top:0;
+    left:0;
+    width:218px;
+    height:88px;
+    padding:40px 0;
+    background-color:rgba(255,255,255,0.9);
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration:none;
+    text-transform:uppercase;  
+    color: white;
+}
+.actions .in-bookmarks{
+    color:#32425c;
+    background:white;
+    border-bottom-color:#63a63e;
+}
+.actions {
     display:none;
+}
+.in-basket,
+.in-bookmarks{
+    font-size: 14px;
+    display:block;
+    width:129px;
+    margin:0 auto;
+    margin-bottom:7px;
+    color: white;
+    padding:7px 0;
+    border:3px solid #63a63e;
+    border-bottom-color:#367315; 
+    background-color:#63a63e;
 }
 .popular-product-item:hover .actions {
   display:block;
@@ -283,28 +333,75 @@ ul {
   line-height: 18px;
 }
 .popular-product-item {
-  position:relative;  
-  width: 220px;
-  height: 318px;
-  border: 1px solid #eaeaea;
+    position:relative;
+    display:inline-block;
+    width:218px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    line-height:20px;
+    font-weight:bold;
+    text-align:center;
+}
+.flag{
+    position:absolute;
+    top:-1px;
+    right:-1px;
+    width:60px;
+    height:60px;
+    text-indent:-1000px;
+    overflow:hidden;
+    z-index:20;
+}
+ .flag-new {
+    background:url("img/new-flag.png") no-repeat 0 0;
+}
+.popular-product-item .popular-image{
+    width:218px;
+    height:168px;
+}
+.popular-product-item .popular-image img {
+  max-width:100%;
 }
 .popular-product-item h3 {
-  font-family: PT sans;
+  font-family: "PT sans";
   font-size: 18px;
   line-height: 20px;
+  min-height:40px;
+  padding:0 25px;
+  margin-top:10px;
+  margin-bottom:15px; 
 }
 .oldprice {
   font-size: 17px;
   font-weight: 700;
   line-height: 18px;
   color: #a9a9a9;
+  min-height:20px;
+  margin-top:15px;
+  margin-bottom:10px;
+  text-decoration-line: line-through;
 }
 .newprice {
   font-size: 17px;
   font-weight: 700;
-  line-height: 18px;
   background: #ee3643;
   color: #ffffff;
+  position:relative;
+  width:80px;
+  margin:10px auto;
+  margin-bottom:20px;
+  padding:10px 30px;
+  border-radius:3px;
+}
+.newprice:after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:-20px;
+    width:0;
+    height:0;
+    border:20px solid white;
+    border-left-color:#ee3643;
 }
 .popular-manufacturer {
    
@@ -376,4 +473,191 @@ ul {
 }
 .service-help-right p {
   font-size:  14px;
+}
+.service-help {
+  position: absolute;
+  opacity: 0;
+}
+.service-help-right {
+  display: none;
+}
+/* Не понял как делать сервисы=( начну Футер=)  */
+footer {
+  background: #32425c;
+}
+.top-footer a, .footer-center a {
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.top-footer p, .footer-center p  {
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.top-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.top-footer-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-end;
+  width: 547px;
+  padding: 0;
+}
+.top-footer-navigation li  {
+  padding: 0 0px;
+  
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.footer-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer-center-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 525px;
+}
+.footer-center-nav a {
+  color: #ffda96;
+}
+.bottom-footer {
+  background:#293449; 
+}
+.content-bottom-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-social {
+}
+.footer-social ul {
+  display: flex;
+  flex-direction: row;
+}
+.bottom-footer-contacts {
+  display: flex;
+  flex-direction: row;
+}
+.bottom-footer  {
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.bottom-footer a {
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffda96;
+}
+.footer-mail {
+  display: flex;
+  flex-direction: column;
+}
+.okno {
+  width: 620px;
+  height: 430px;
+}
+.okno:target {
+  display: block;
+}
+.letter {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.letter label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  font-style: normal
+  
+}
+/*Это будет ко второй */
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.breadcrumbs a {
+  line-height: 18px;
+  padding: 10px;
+  font-size: 13px;
+  font-family: 'PT Sans';
+  color: black;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 30px 30px;
+    text-transform: uppercase;
+}
+.caption {
+    background: bisque;
+    color: #32425c;
+}
+h2{
+background: bisque;
+padding: 9px 17px;
+}
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+.main-center {
+  display: flex;
+  flex-direction: row;
+}
+.catalog {
+  display: flex;
+  flex-direction: column;
+}
+.catolog-prefarators ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0px;
+  margin: 0;
+}  
+fieldset {
+  border: none;
+}
+legend {
+  font-size: 17px;
+  line-height: 30px;
+  font-style: bold;
+  font-family: 'PT Sans';
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+}
+.header-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sorting {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
 }
