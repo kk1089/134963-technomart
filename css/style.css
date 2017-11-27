@@ -254,6 +254,7 @@ main {
 }
 /*  Не получается с желты ми блоками попробую  сделать карточку с дрелью */
 ul {
+  padding: 0;
    text-decoration: none;
    list-style-type: none;
 }
@@ -446,11 +447,23 @@ ul {
   font-size:14px;
   
 }
+/* Слайдер сервисов */
 .service-controls {
-  display: flex;
-  flex-direction: column;
+ 
 }
-
+.service-pop {
+  position: relative;
+}
+#delivery:checked~.service-controls label[for=delivery] {
+    color: #32425c;
+    background: #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    outline: none;
+}
+#delivery:checked~ .service-help-right .service-delivery {
+  display: block;
+}
 .service-controls label {
   font-size: 21px;
   line-height: 30px;
@@ -479,7 +492,7 @@ ul {
   opacity: 0;
 }
 .service-help-right {
-  display: none;
+ 
 }
 /* Не понял как делать сервисы=( начну Футер=)  */
 footer {
@@ -611,15 +624,7 @@ h1 {
     background: bisque;
     color: #32425c;
 }
-h2{
-background: bisque;
-padding: 9px 17px;
-}
-.filter {
-  display: flex;
-  flex-direction: column;
-  width: 220px;
-}
+
 .main-center {
   display: flex;
   flex-direction: row;
@@ -636,10 +641,25 @@ padding: 9px 17px;
   padding: 0px;
   margin: 0;
 }  
+/* ТУТ ФОРМА */
+.filters {
+  margin-right: 20px;
+}
 fieldset {
+  margin: 0;
+  padding: 0;
   border: none;
 }
-legend {
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+.range-filter {
+  width: 220px;
+  margin-top: 20px;
+}
+.filter legend {
   font-size: 17px;
   line-height: 30px;
   font-style: bold;
@@ -647,6 +667,56 @@ legend {
   font-weight: 700;
   color: black;
   text-transform: uppercase;
+}
+.range-control {
+  position: relative;
+  height: 40px;
+  background: #f7f3ec;
+  margin-bottom: 15px;
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.range-control .scale {
+  height: 2px;
+  background: #d7dcde;
+}
+.range-control .bar {
+  width: 85%;
+  height: 2px;
+  background: #00ca74;
+  
+}
+.range-control .toggle {
+  position: absolute;
+  top: 31px;
+  width: 4px;
+  height: 4px;
+  padding: 0;
+  box-shadow: 0 2px 1px 0 #cfcfcf;
+  border: 8px solid #ffffff;
+  background-color: #ababab;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.range-control .toggle-min {
+  left: 20px;
+}
+.range-control .toggle-max {
+  left: 150px;
+}
+.price-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.price-control input {
+  text-align: center;
+  font-size: 17px;
+  width: 93px;
+  height: 32px;
+  background: #f7f3ec;
+  border: none;
 }
 .header-main {
   display: flex;
@@ -660,4 +730,79 @@ legend {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+}
+/* Вотой раздел формы */
+.filter-producer,
+.filter-option{
+  padding: 0;
+}
+.filter-option input[type=checkbox]+label {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    font-family: "PT sans";
+    color: #000;
+    cursor: pointer;
+}
+.filter-option input[type=checkbox]:checked+label:after{
+  content: "";
+  position: absolute;
+  background: url(/img/checkbox-on.svg) no-repeat;
+  left: 0px;
+  top: -4px;
+  width: 26px;
+  height: 26px;
+  
+}
+.filter-option input[type=checkbox]+label:before {
+  content: "";
+  position: absolute;
+  background: url(/img/checkbox-off.svg) no-repeat;
+  left: 0px;
+  top:-4px;
+  width: 26px;
+  height: 26px;
+}
+.filter-producer input ,
+.filter-option input {
+  display: none;
+}/* Третий раздел формы */
+.filter-option input[type=radio]+label {
+  position: relative;
+  display: block;
+  font-size: 14px; 
+  padding-left:35px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+  cursor:pointer;
+}
+.filter-option input[type=radio]:checked+label:after {
+  content: "";
+  position: absolute;
+  background: url("/img/radio-on.svg");
+  left: 0px;
+  top:-4px;
+  width: 26px;
+  height: 26px;
+}
+.filter-option input[type=radio]+label:before {
+  content: "";
+  position: absolute;
+  background: url("/img/radio-off.svg");
+  left:0;
+  top: -4px;
+  width: 26px;
+  height: 26px;
+}
+.filter-button {
+  width: 140px;
+  background: #ffffff;
+  height: 38px;
+  border: 1px solid #e5e5e5;
 }
