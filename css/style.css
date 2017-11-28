@@ -44,7 +44,7 @@ header {
   text-transform: uppercase;
   background: #ee3643;
 }
-h1 {
+h1, h2, h3 {
   margin: 0;
 }
 .search  {
@@ -189,12 +189,8 @@ main {
   flex-direction: column;
 }
 /*      Слайды    =/ */
-.offers {
-  display: flex;
-  flex-direction: row;
-}
 .sliders {
- order: 1;
+  position: relative;
 }
 .sliders h2 {
   font-size: 30px;
@@ -206,51 +202,117 @@ main {
 .sliders p {
   font-family: 'PT Sans';
   font-size: 18px;
-  font-weight: 400px;
+  font-weight: 400;
   line-height: 24px;
   color: #ffffff;
 }
 .popular-button {
-    width: 250px;
-    font-size: 14px; */
+    width: 253px;
+    font-size: 14px;
     line-height: 18px;
-    color: #ffffff; 
+    color: #ffffff;
     background: #ee3643;
     border-radius: 3px;
     text-transform: uppercase;
-    padding: 14px 0;
+    padding: 10px 0;
     text-align: center;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+}
 .slide1 {
+  display: none;
   background-image: url(/img/slider_1.jpg );
   width: 620px;
   height: 266px;
 }
 /*      Воторй слайд    =/*/
 .slide2 {
+  display: none;
   background-image: url(/img/slider_2.jpg);
   width: 620px;
   height: 266px;
 }
-
+.button {
+    display: block;
+    width: 240px;
+    font-size: 14px;
+    padding: 13px 0;
+    line-height: 18px;
+    color: white;
+    text-transform: uppercase;
+    background: #ee3643;
+    text-align: center;
+}
+.slider-controls label {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 3px;
+}
+.slider-controls label::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  z-index: 1;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.slider-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 55px;
+  z-index: 100;
+  width: 160px;
+  height: 18px;
+  text-align: center;
+  font-size: 0;
+  transform: translateX(-50%);
+}
+#product-1:checked ~ .slider-list .slide1 {
+ display: block; 
+}
+#product-2:checked ~ .slider-list .slide2 {
+  display: block;
+}
+.slider-controls .active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 6px;
+  height: 6px;
+  background: #ee3643;
+  margin: -3px -6px ;
+  border-radius: 50%;
+  
+}
 /*   желтый прямоуголтники которые я не понимаю  */
-.categories ul {
+ .offers {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0;
-  flex-wrap: ;
-}
-.category {
-  list-style: none;
+  flex-wrap: wrap;
 }
 .category {
   width: 300px;
   height: 123px;
   font-size: 24px;
-  margin-right: 20px;
+  margin-bottom: 20px;
   color:#ffffff;
   background-color: #f6b22d;
+  list-style: none;
 }
 /*  Не получается с желты ми блоками попробую  сделать карточку с дрелью */
 ul {
@@ -327,12 +389,7 @@ ul {
   vertical-align: middle;
   text-transform: uppercase;
 }
-.popular a {
-  background: #ee3643;
-  color:#ffffff;
-  font-size: 14px;
-  line-height: 18px;
-}
+
 .popular-product-item {
     position:relative;
     display:inline-block;
@@ -354,11 +411,12 @@ ul {
     z-index:20;
 }
  .flag-new {
-    background:url("img/new-flag.png") no-repeat 0 0;
+    background:url("../img/new-flag.png") no-repeat 0 0;
 }
 .popular-product-item .popular-image{
-    width:218px;
-    height:168px;
+    width: 218px;
+    margin-top: 30px;
+    height: 138px
 }
 .popular-product-item .popular-image img {
   max-width:100%;
@@ -454,7 +512,7 @@ ul {
 .service-pop {
   position: relative;
 }
-#delivery:checked~.service-controls label[for=delivery] {
+#delivery:checked ~.service-controls label[for=delivery] {
     color: #32425c;
     background: #fff;
     border-top: 1px solid #fff;
@@ -638,7 +696,7 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0px;
+  padding: 0;
   margin: 0;
 }  
 /* ТУТ ФОРМА */
