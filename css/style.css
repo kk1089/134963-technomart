@@ -23,12 +23,12 @@ header {
 .container {
   width: 940px;
   margin: auto;
-  padding: 0 10px;
 }
 .header-top-wrapper {
    display: flex;
    flex-direction: row;
-   align-items: center;
+   align-items: flex-start;
+  justify-content: space-between;
 }
 /* Логотип */
 .logo {
@@ -43,41 +43,107 @@ header {
   text-transform: uppercase;
   background: #ee3643;
 }
+.logo:hover,
+.button-slider:hover,
+.popular-button:hover {
+background: #ca2c37;
+}
+.logo:active,
+.button-slider:active,
+.popular-button:active {
+  background: #ba2732;
+}
 h1, h2, h3 {
   margin: 0;
 }
-.search  {
-  min-width: 260px;
+input {
+  outline:none;
+}
+.search {
+ min-width: 270px;
  background: #293449;
+font-size: 17px;
+    line-height: 18px;
+    font-weight: 400;
+    font-style: normal;
+  font-family: "Cuprum","Arial",sans-serif;
  padding: 12px 45px;
  color: #fff;
  cursor: pointer;
-  border: none;
+ border: none;
 }
 .search:hover {
   background: rgba(0,0,0,.2);
   border: none;
 }
+.search:focus {
+  background: #fff;
+  border: none;
+}
 .bookmarks {
+  position: relative;
   min-width: 105px;
   font-size: 17px;
   line-height: 18px;
   padding: 12px 0 12px 45px;
 }
+.bookmarks:hover,
+.basket:hover{
+  background: #212a3a;
+}
+.bookmarks:before {
+  content: "";
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/icon-bookmark.svg) no-repeat;
+  opacity: 0.5;
+}
+.bookmarks:hover:before {
+  opacity: 1;
+}
+.bookmarks:active,
+.basket:active{
+  background: #161d29;
+}
 .basket {
- min-width: 126px;
-  font-size: 17px;
-  line-height: 18px;
-  padding: 12px 0;
-  padding-left: 20px;
+    position: relative;
+    min-width: 150px;
+    font-size: 17px;
+    line-height: 18px;
+    text-align: center;
+    padding: 12px 0;
+}
+.basket:before {
+  content: "";
+  position: absolute;
+  top:10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(../img/icon-cart.svg) no-repeat;
+   opacity: 0.5;
+}
+.basket:hover:before {
+  
+  opacity: 1;
 }
 .checkout {
- min-width: 126px;
+  min-width: 150px;
   font-size: 17px;
   line-height: 18px;
   padding: 12px 0;
-  padding-left: 20px;
+  text-align: center;
   background: #63a63e;
+  
+}
+.checkout:hover {
+  background: #5fbb2d;
+}
+.checkout:active {
+      background: #518534;
 }
 .header-bottom {  
 }
@@ -87,8 +153,9 @@ h1, h2, h3 {
   justify-content: center;
   flex-wrap:wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   min-height: 160px;
+  margin-top: 40px;
 }
 .tittle {
   font-size: 16px;
@@ -98,6 +165,7 @@ h1, h2, h3 {
 }
 .tittle p  {
   padding: 0;
+  margin: 0;
   margin-left: 53px;
 }
 .contacts {
@@ -106,11 +174,24 @@ h1, h2, h3 {
     align-items: center;
 }
 .contacts a {
+  display: inline-block;
+  position: relative;
+  width: 270px;
+  text-align: center;
+  padding: 12px 0;
   color: #ee3643;
   font-size: 21px;
   line-height: 18px;
   border: 3px solid #ffffff;
 } 
+.contacts a:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10px;
+  background: url(../img/icon-phone.svg) no-repeat;
+}
 .contacts p {
   color:#32425c;
   font-size: 14px;
@@ -120,17 +201,51 @@ h1, h2, h3 {
 .user-block {
     display: flex;
     flex-direction: row;
-    width: 250px;
+    flex-wrap: wrap;
+    width: 330px;
+    justify-content: flex-end;
 }
 .user-block a {
+    display: flex;
+    height: 45px;
     margin-left: 10px;
-    padding: 10px 15px;
+    padding: 0 27px;
+    align-items: center;
     font-size: 21px;
     line-height: 18px;
     color: black;
     background: white;
 }
+.login {
+  position: relative;
+  width: 60px;
+  justify-content: flex-end;
+}
+.login:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-left: -55px;
+  background: url(../img/icon-login.svg) no-repeat;
+}
+.logoff {
+  position: relative;
+  justify-content: flex-start;
+  
+}
+.logoff:before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  width:20px;
+  height:20px;
+  
+  background: url("../img/icon-logout.svg") no-repeat;
+}
+
 .regisration a {
+ 
     text-decoration: underline;
     color: #32425c;
     background: none;
@@ -173,11 +288,12 @@ h1, h2, h3 {
 .header-nav a {
   color: #ffffff;
 }
-.header-top a:hover,
-.header-top a:focus, 
 .header-nav a:hover,
 .header-nav a:focus {
   background: rgba(0,0,0,.2);
+}
+.header-nav a:active {
+    background: #1d2739;
 }
 /* Начало main */
 main {
@@ -252,9 +368,6 @@ main {
     background: #ee3643;
     text-align: center;
     border-radius: 3px;
-}
-.button-slider:hover {
-  background: rgba(0,0,0,.2);
 }
 .slider-controls label {
   position: relative;
@@ -539,9 +652,14 @@ ul {
   border: 1px solid #eaeaea;
   margin-top: 20px;
 }
-/* Не щабудь переделать чтоб красиво было а ене это безобразие */
+/*  */
 .popular-manufacturer-item a {
-  padding: 50px;
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 145px;
 }
 .popular-manufacturer-item:hover {
   box-shadow: 0 10px 25px rgba(41,52,73,.5);
@@ -563,50 +681,89 @@ ul {
 }
 /* Слайдер сервисов */
 .service-controls {
- 
+ display: flex;
+flex-direction: column;
+  
 }
 .service-pop {
+  display: flex;
   position: relative;
 }
-#delivery:checked ~.service-controls label[for=delivery] {
+#delivery:checked ~.service-controls label[for=delivery],
+#guaranty:checked ~.service-controls label[for=guaranty],
+#credit:checked ~.service-controls label[for=credit]{
     color: #32425c;
     background: #fff;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
     outline: none;
 }
-#delivery:checked~ .service-help-right .service-delivery {
+#delivery:checked~ .service-right .service-delivery,
+#guaranty:checked ~ .service-right .service-guaranty,
+#credit:checked~ .service-right .service-credit {
   display: block;
 }
 .service-controls label {
+  width: 200px;
   font-size: 21px;
   line-height: 30px;
-  max-width: 220px;
+  font-weight: 700;
   background: #32425c;
   color:#ffffff;
-  padding: 15px 10px;
+  padding: 15px 20px;
   text-align: left;
   vertical-align: middle;
 }
 .service-controls label:hover {
   background: #293449;
 }
-.service-help-right span {
+.service-right {
+padding: 0 80px;
+  margin: 0;
+}
+.service-right li {
+  display: none;
+  width: 620px;
+  height: 300px; 
+}
+.service-right span {
   font-family: "Cuprum","Arial",sans-serif;
   font-size: 36px;
   line-height: 24px;
   color:#32425c;
   text-transform: uppercase;
 }
-.service-help-right p {
+.service-right p {
   font-size:  14px;
 }
-.service-help {
-  position: absolute;
-  opacity: 0;
+.service-delivery {
+  background: url("../img/delivery.png") no-repeat;
+  background-position: right top;
 }
-.service-help-right {
- 
+.service-guaranty {
+  background: url("../img/guarantee.png") no-repeat;
+  background-position: right top;
+}
+.service-credit {
+  background: url("../img/credit.png") no-repeat;
+  background-position: right top;
+}
+.service-credit a {
+    width: 107px;
+    display: block;
+    padding: 10px 44px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Cuprum","Arial",sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: #ee3642;
+    border-radius: 5px;
+    outline: none;
 }
 /* Не понял как делать сервисы=( начну Футер=)  */
 footer {
@@ -728,7 +885,7 @@ footer a:hover {
   text-transform: uppercase;
 }
 h1 {
-  margin: 0;
+     margin: 0;
     font-size: 30px;
     line-height: 30px;
     padding: 30px 30px;
