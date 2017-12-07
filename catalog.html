@@ -46,7 +46,10 @@
               <a class="cabinet" href="">Личный кабинет</a>
             </div>
           </div>
-          <nav class="header-nav">
+         
+       
+      </div>
+       <nav class="header-nav container">
             <ul>
               <li><a href="#">Главная</a></li>
               <li><a href="#">Компания</a></li>
@@ -57,8 +60,6 @@
               <li><a href="#">Контакты</a></li>
             </ul>
           </nav>
-       
-      </div>
     </div>
   </header>
   <!--
@@ -67,13 +68,13 @@
    
    -->
   <main>
-    <div class="container">
-      <div class="catalog-main">
+    
+      <div class="catalog-main container">
         <ul class="breadcrumbs">
-          <li><a href="index">Главная</a></li>
-          <li><a href="catalog">Каталог</a></li>
+          <li><a href="index.html"></a></li>
+          <li><a href="catalog.html">Каталог</a></li>
           <li><a href="instrument">Инструмент</a></li>
-          <li class="breadcrumbs-current"><a href="perforator">Пертфоратор</a></li>
+          <li class="breadcrumbs-current"><a  href="perforator">Пертфоратор</a></li>
         </ul>
         <div class="caption">
           <h1>Перфораторы</h1>
@@ -150,13 +151,12 @@
                   <li><a href="#">По типу</a>
                     <li><a href="#">По функционалу</a>
               </ul>
-              <ul class="sorting">
+              <ul class="sorting-right visually-hidden">
                 <li><a href="#">От большего к меньшуму</a>
                   <li><a href="#">От меньшего к болшему</a>
               </ul>
             </div>
-            <div class="catolog-prefarators">
-              <ul>
+              <ul class="catolog-prefarators">
                 <li class="popular-product-item">
                   <div class="actions">
                     <a class="in-basket" href="">Купить</a>
@@ -266,7 +266,7 @@
                   <div class="newprice">12500 Р.</div>
                 </li>
               </ul>
-              </div>
+              
               <ul class="pagination-list">
                 <li class="pagination-item pagination-item-current"><a>1</a></li>
                 <li class="pagination-item"><a href=#>2</a></li>
@@ -276,11 +276,13 @@
           </section>
           </div>
         </div>
-        <article>
+       <div class="down-main">
+       <article class="container" >
           <h3>Пара слов о перфораторах</h3>
-          <P>Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне. Существуют электромеханический и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерты и отбойного молотка. В ассортементном ряду есть выбор "трехрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель. </P>
-        </article>
-      </div>
+          <P>Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>Существуют электромеханический и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерты и отбойного молотка. В ассортементном ряду есть выбор "трехрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель. </P>
+       </article>
+    </div>
+      
   </main>
   <!-- 
   
@@ -288,11 +290,11 @@
 
   
   -->
-  <footer class="footer">
+<footer class="footer">
     <div class="container">
       <div class="top-footer">
-        <div class="logo">
-          <a href="#">Техномарт</a>
+        <div>
+          <a class="logo-footer" href="/index.html">Техномарт</a>
         </div>
         <ul class="top-footer-navigation">
           <li><a href="">Компания</a></li>
@@ -319,13 +321,13 @@
           <p class="about-contacts">
             2010-2017 Компания "Техномарт" <br> Все права защищены
           </p>
-          <div class="footer-social">
-            <ul>
-              <li><a class="social-button" href="#">Вконтакте</a></li>
-              <li><a class="social-button" href="#">Фейсбук</a></li>
-              <li><a class="social-button" href="#">Инстаграм</a></li>
+         
+            <ul class="footer-social">
+              <li><a class="social-button social-button-vk" href="#">Вконтакте</a></li>
+              <li><a class="social-button social-button-fb" href="#">Фейсбук</a></li>
+              <li><a class="social-button social-button-in" href="#">Инстаграм</a></li>
             </ul>
-          </div>
+          
           <div class="bottom-footer-contacts">
             <p class="footer-mail">
               <b>Обратная связь:</b>
@@ -340,3 +342,35 @@
       </div>
     </div>
   </footer>
+  <section class="modal modal-buy">
+   <button class="modal-close" type="button">закрыть</button>
+   
+      <span>Товар добавлен в корзину!</span>
+    
+    <div class="modal-buy-down">
+      <a class="modal-buy-button">оформить закакз</a>
+      <a class="modal-buy-button-next">продолжить покупки</a>
+    </div>
+  </section>
+  </body>
+     <script>
+      var buyLink = document.querySelector(".in-basket");
+    var buyPopup = document.querySelector(".modal-buy");
+    var buyClose = buyPopup.querySelector(".modal-close");
+    buyLink.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      buyPopup.classList.add("modal-show");
+    });
+    buyClose.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      buyPopup.classList.remove("modal-show");
+    });
+    window.addEventListener("keydown", function(evt) {
+      if (evt.keyCode === 27) {
+        if (buyPopup.classList.remove("modal-show")) {
+          buyPopup.classList.remove("modal-show");
+      }
+    }
+    });
+  </script>
+</html>
