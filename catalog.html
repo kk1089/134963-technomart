@@ -12,6 +12,27 @@
 </head>
 
 <body>
+ <!-- SVG иконки -->
+  <svg style="display:none">
+    <symbol id="icon-login" viewBox="0 0 20 17">
+      <path d="M15 8.5L6 0v6H0v5h6v6z"/>
+      <path d="M17 15h-5v2h5c2.2 0 3-1.8 3-3V3c0-1.2-.8-3-3-3h-5v2h5c.8 0 1 .7 1 1v11c0 .3-.2 1-1 1z"/>
+    </symbol>
+    <symbol id="icon-logout" viewBox="0 0 21 17">
+      <path d="M21 8.5L12.125 0v6h-6v5h6v6z"/>
+      <path d="M3.106 13.952V3.048c.018-.376.171-1.057 1.01-1.057h5.027V0H4.116C1.938 0 1.112 1.81 1.087 3.027v10.946C1.112 15.189 1.938 17 4.116 17h5.027v-1.99H4.116c-.839 0-.992-.683-1.01-1.058z"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 20 18">
+      <path d="M17.881 14.166c-2.144-.735-4.256-1.666-5.207-2.39-.657-.501-.77-1.618-.517-2.415 1.118-.903 1.864-2.477 1.864-4.278C14.021 2.276 12.221 0 10 0S5.979 2.276 5.979 5.083c0 1.801.746 3.374 1.863 4.277.253.798.141 1.915-.517 2.416-.95.724-3.063 1.654-5.207 2.39S0 18 0 18h20s.025-3.099-2.119-3.834z"/>
+    </symbol>
+    <symbol id="icon-up" viewBox="0 0 11 10">
+      <path d="M5.5 0L0 10h11z"/>
+    </symbol>
+    <symbol id="icon-down" viewBox="0 0 11 10">
+      <path d="M5.5 10L0 0h11"/>
+    </symbol>
+  </svg>
+  <!-- SVG иконки - end -->
   <!--
 			header
 		-->
@@ -22,7 +43,7 @@
           <a class="logo btn" href="index.html">Техномарт</a>
           <input class="search" type="search" placeholder="Поиск">
           <a class="bookmarks btn" href="#">Закладки: 0</a>
-          <a class="basket btn" href="#">Корзина: 10</a>
+          <a class="basket full-basket" href="#">Корзина: 10</a>
           <a class="checkout btn" href="">Оформить заказ</a>
         </div>
       </div>
@@ -40,7 +61,15 @@
             <p>г. Санкт-Петербург. ул. Б. Конюшенная д. 19/8</p>
           </div>
           <div class="user-block">
-            <a class="logoff" href="">Равшан Джамшутович</a>
+            <a class="logoff" href="">
+            <svg class="icon-user" width="20" height="18">
+            <use xlink:href="#icon-user"></use>
+          </svg>Равшан Джамшутович</a>
+           <a class="profile-logout" aria-label="Выйти из профиля" href="">
+            <svg class="icon-logout" width="21" height="17">
+              <use xlink:href="#icon-logout"></use>
+            </svg>
+            </a>
             <div class="regisration">
               <a class="my-orders" href="">Мои заказы</a>
               <a class="cabinet" href="">Личный кабинет</a>
@@ -129,7 +158,7 @@
               </fieldset>
               <fieldset>
                 <legend>Питание:</legend>
-                <ul>
+                <ul class="filter-battery" >
                   <li class="filter-option">
                     <input class="visually-hidden filter-input filter-input-radio" type="radio" name="supply" value="baterry" checked id="filter-baterry">
                     <label for="filter-baterry">АККУМУЛЯТОРНЫЕ</label>
@@ -147,13 +176,17 @@
             <div class=header-main>
               <h2>Cортировка:</h2>
               <ul class="sorting">
-                <li><a href="#">По цене</a>
+                <li><a class="acitve-sorting" href="#">По цене</a>
                   <li><a href="#">По типу</a>
                     <li><a href="#">По функционалу</a>
               </ul>
-              <ul class="sorting-right visually-hidden">
-                <li><a href="#">От большего к меньшуму</a>
-                  <li><a href="#">От меньшего к болшему</a>
+              <ul class="sorting-right">
+                <li><a href="#"><svg class="icon-up" width="11" height="10">
+                  <use xlink:href="#icon-up"></use>
+                </svg></a></li>
+                <li><a href="#"> <svg class="icon-down" width="11" height="10">
+              <use xlink:href="#icon-down"></use>
+            </svg></a></li>
               </ul>
             </div>
               <ul class="catolog-prefarators">
