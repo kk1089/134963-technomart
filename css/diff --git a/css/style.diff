@@ -1,0 +1,13 @@
+diff --git a/css/style.css b/css/style.css
+--- css/style.css
++++ css/style.css
+@@ -2025,8 +2025,8 @@
+   padding-top: 67px;
+ }
+ 
+ .down-main p {
+-  font-size 14px;
++  font-size: 14px;
+   line-height: 24px;
+   padding-bottom: 73px;
+ }
